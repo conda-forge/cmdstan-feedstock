@@ -20,8 +20,9 @@ cd %PREFIX%\Library\bin\cmdstan
 
 echo TBB_CXX_TYPE=gcc >> make\local
 if errorlevel 1 exit 1
-type make\local
-if errorlevel 1 exit 1
+
+:: temp - make sure patch applied
+type make/program
 
 mingw32-make clean-all
 if errorlevel 1 exit 1
