@@ -19,8 +19,6 @@ echo "fname=\${1%.stan}" >> "${PREFIX}/bin/cmdstan_model"
 echo "make -C ${PREFIX}/bin/cmdstan \$(realpath --relative-to=${PREFIX}/bin/cmdstan \$fname) \"\${@:2}\"" >> "${PREFIX}/bin/cmdstan_model"
 chmod +x "${PREFIX}/bin/cmdstan_model"
 
-cat  "${PREFIX}/bin/cmdstan_model"
-
 # activate script
 echo "export CMDSTAN=${PREFIX}/bin/cmdstan" >> "${RECIPE_DIR}/activate.sh"
 # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
