@@ -8,7 +8,7 @@ package:
 source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: ff71f4d255cf26c2d8366a8173402656a659399468871305056aa3d56329c1d5
-  patch:  # this can be deleted after next cmdstan release
+  patches:  # this can be deleted after next cmdstan release
     - recipe/0001-Update-make-logic-for-Windows-dll-check.patch  # [win]
 
 build:
