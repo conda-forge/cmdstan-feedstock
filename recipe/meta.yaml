@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: ff71f4d255cf26c2d8366a8173402656a659399468871305056aa3d56329c1d5
+  patches:  # this can be deleted after next cmdstan release
+    - make-tbb-check.patch  # [win]
 
 build:
-  number: 1
+  number: 2
   binary_relocation: False
 
 requirements:
@@ -35,6 +37,10 @@ requirements:
     - m2-coreutils                 # [win]
   run_constrained:
     - tbb >=2021                   # [win]
+
+test:
+  downstreams:
+    - cmdstanpy
 
 about:
   home: https://mc-stan.org/users/interfaces/cmdstan.html

@@ -17,10 +17,9 @@ echo d | Xcopy /s /e /y . %PREFIX%\Library\bin\cmdstan > NUL
 if errorlevel 1 exit 1
 
 cd %PREFIX%\Library\bin\cmdstan
+if errorlevel 1 exit 1
 
 echo TBB_CXX_TYPE=gcc >> make\local
-if errorlevel 1 exit 1
-type make\local
 if errorlevel 1 exit 1
 
 mingw32-make clean-all
