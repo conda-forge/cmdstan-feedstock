@@ -9,7 +9,7 @@ source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86]
   sha256: ff71f4d255cf26c2d8366a8173402656a659399468871305056aa3d56329c1d5  # [x86]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [not x86]
-  sha256: 7d1beb72704d7300302ed3b0368dcc5903b68ad7435678eb57dc2c553c22c2dc
+  sha256: 7d1beb72704d7300302ed3b0368dcc5903b68ad7435678eb57dc2c553c22c2dc  # [not x86]
   patches:  # this can be deleted after next cmdstan release
     - make-tbb-check.patch  # [win]
 
