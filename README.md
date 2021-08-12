@@ -26,7 +26,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>Drone</td>
+    <td>
+      <a href="https://cloud.drone.io/conda-forge/cmdstan-feedstock">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/cmdstan-feedstock/master.svg?label=Linux">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
