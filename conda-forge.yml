@@ -1,3 +1,5 @@
+azure:
+  store_build_artifacts: true
 conda_forge_output_validation: true
 linux_aarch64:
   enabled: True
