@@ -1,5 +1,5 @@
 
-:: activate/deactivate setup - cmd, pwsh, and bash 
+:: activate/deactivate setup - cmd, pwsh, and bash
 echo SET CMDSTAN=%PREFIX%\Library\bin\cmdstan\>> %RECIPE_DIR%\activate.bat
 echo $Env:CMDSTAN="%PREFIX%\Library\bin\cmdstan">> %RECIPE_DIR%\activate.ps1
 echo export CMDSTAN=%PREFIX%/Library/bin/cmdstan>> %RECIPE_DIR%\activate.sh
@@ -19,6 +19,9 @@ if errorlevel 1 exit 1
 cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
+echo STAN_THREADS=true >> make\local
+if errorlevel 1 exit 1
+
 echo TBB_CXX_TYPE=gcc >> make\local
 if errorlevel 1 exit 1
 
@@ -30,4 +33,3 @@ if errorlevel 1 exit 1
 
 copy stan\lib\stan_math\lib\tbb\tbb.dll ..
 if errorlevel 1 exit 1
-
