@@ -14,11 +14,11 @@ source:
     - make-tbb-check.patch  # [win]
 
 build:
-  number: 2
+  number: 3
   binary_relocation: False
 
 requirements:
-  build:  
+  build:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
