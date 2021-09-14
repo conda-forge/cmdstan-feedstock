@@ -7,11 +7,14 @@ echo "TBB_CXX_TYPE=${c_compiler}"  >> make/local
 echo "TBB_INTERFACE_NEW=true" >> make/local
 echo "TBB_INC=${PREFIX}/include/" >> make/local
 echo "TBB_LIB=${PREFIX}/lib/" >> make/local
-echo "PRECOMPILED_HEADERS=false" >> make/local
+#echo "PRECOMPILED_HEADERS=false" >> make/local
 
 make clean-all
 
 make build -j${CPU_COUNT}
+
+# delete precompiled header from build
+rm stan/src/stan/model/model_header.hpp.gch
 
 # set up an alias. see https://github.com/stan-dev/cmdstan/issues/1024
 echo "#!/bin/bash" > "${PREFIX}/bin/cmdstan_model"
