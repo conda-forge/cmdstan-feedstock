@@ -1,5 +1,5 @@
 {% set name = "cmdstan" %}
-{% set version = "2.27.0" %}
+{% set version = "2.26.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86]
-  sha256: ff71f4d255cf26c2d8366a8173402656a659399468871305056aa3d56329c1d5  # [x86]
+  sha256: d944d23ac7ed5ebf924d859f3a1f3052891161e2c70313503f21257ea13f0b0c  # [x86]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [not x86]
-  sha256: 7d1beb72704d7300302ed3b0368dcc5903b68ad7435678eb57dc2c553c22c2dc  # [not x86]
+  sha256: dde66ccda89929375f9cba554b3dc7745b7220b23c75523e78cc946bdd3e3399  # [not x86]
   patches:  # this can be deleted after next cmdstan release
     - make-tbb-check.patch  # [win]
 
 build:
-  number: 3
+  number: 0
   binary_relocation: False
 
 requirements:
