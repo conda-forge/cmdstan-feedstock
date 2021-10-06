@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86]
-  sha256: c03081e37783a8d3c893cd54a555bd82a3ac1f2bd5eca2186a16b9ae22e11d70  # [x86]
+  sha256: 20e531f60a38909c7c83b3135393880d45648cb4341f6b3dd4844cdaf8285dd5  # [x86]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [not x86]
   sha256: c03081e37783a8d3c893cd54a555bd82a3ac1f2bd5eca2186a16b9ae22e11d70  # [not x86]
   patches:  # this can be deleted after next cmdstan release
