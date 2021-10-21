@@ -10,7 +10,7 @@ source:
   sha256: eacadb4a1ca6997c9858e301780e729e53a9b5207b19ae2616abc882677e7637  # [x86]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [aarch64]
   sha256: c58d2c0254da0160358796f8ba7a0ab0fb9a315c0cdaa20ddc25fe1043b116f4  # [aarch64]
-  url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version}}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
+  url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
   sha256: c7cfa83ff85ceb792b56ef817b45cb81220bc9d41987356449ecfadb42579d93  # [ppc64le]
 
 build:
