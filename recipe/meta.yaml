@@ -9,9 +9,9 @@ source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86]
   sha256: eacadb4a1ca6997c9858e301780e729e53a9b5207b19ae2616abc882677e7637  # [x86]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [aarch64]
-  sha256: c58d2c0254da0160358796f8ba7a0ab0fb9a315c0cdaa20ddc25fe1043b116f4  # [aarch64]
+  sha256: 0ab11724e51df1744e36a8ff29275ee04d14098ee18c0ed9227ee606d30181d9  # [aarch64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
-  sha256: c7cfa83ff85ceb792b56ef817b45cb81220bc9d41987356449ecfadb42579d93  # [ppc64le]
+  sha256: 1bfd77765dfbaf9302decb61383a7b16f2aa63e4dc8039f2343edceb2393e106  # [ppc64le]
 
 build:
   number: 1

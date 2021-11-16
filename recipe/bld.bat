@@ -21,10 +21,6 @@ if errorlevel 1 exit 1
 cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
-:: not read-only
-attrib -R /S
-if errorlevel 1 exit 1
-
 echo TBB_CXX_TYPE=gcc >> make\local
 if errorlevel 1 exit 1
 
@@ -35,6 +31,10 @@ mingw32-make build -j%CPU_COUNT%
 if errorlevel 1 exit 1
 :: also compile threads header
 mingw32-make build -j%CPU_COUNT% STAN_THREADS=TRUE
+if errorlevel 1 exit 1
+
+:: not read-only
+attrib -R /S
 if errorlevel 1 exit 1
 
 copy stan\lib\stan_math\lib\tbb\tbb.dll ..
