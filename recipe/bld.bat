@@ -12,6 +12,8 @@ for %%F in (activate deactivate) DO (
     copy %RECIPE_DIR%\%%F.sh %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.sh
 )
 
+:: we don't need test files
+del /s /q ".\src\test"
 
 echo d | Xcopy /s /e /y . %PREFIX%\Library\bin\cmdstan > NUL
 if errorlevel 1 exit 1
@@ -26,6 +28,13 @@ mingw32-make clean-all
 if errorlevel 1 exit 1
 
 mingw32-make build -j%CPU_COUNT%
+if errorlevel 1 exit 1
+:: also compile threads header
+mingw32-make build -j%CPU_COUNT% STAN_THREADS=TRUE
+if errorlevel 1 exit 1
+
+:: not read-only
+attrib -R /S
 if errorlevel 1 exit 1
 
 copy stan\lib\stan_math\lib\tbb\tbb.dll ..

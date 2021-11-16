@@ -1,3 +1,6 @@
+# don't need test files
+rm -rf src/test
+
 mkdir -p $PREFIX/bin
 cp -r . $PREFIX/bin/cmdstan
 
@@ -11,9 +14,11 @@ echo "TBB_LIB=${PREFIX}/lib/" >> make/local
 make clean-all
 
 make build -j${CPU_COUNT}
+make build -j${CPU_COUNT} STAN_THREADS=TRUE
 
 # delete precompiled header from build
 rm stan/src/stan/model/model_header.hpp.gch
+rm stan/src/stan/model/model_header_threads.hpp.gch
 
 # set up an alias. see https://github.com/stan-dev/cmdstan/issues/1024
 echo "#!/bin/bash" > "${PREFIX}/bin/cmdstan_model"
