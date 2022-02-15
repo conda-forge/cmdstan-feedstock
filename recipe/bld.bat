@@ -24,6 +24,9 @@ if errorlevel 1 exit 1
 echo TBB_CXX_TYPE=gcc >> make\local
 if errorlevel 1 exit 1
 
+mingw32-make print-compiler-flags
+if errorlevel 1 exit 1
+
 mingw32-make clean-all
 if errorlevel 1 exit 1
 

@@ -1,5 +1,5 @@
 {% set name = "cmdstan" %}
-{% set version = "2.28.2" %}
+{% set version = "2.29.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,13 @@ package:
 
 source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86]
-  sha256: 4e6ed2685460d7f33ddbc81ccb1e59befa7efd91e46d5b040027aab8daec4526  # [x86]
+  sha256: 24eb6b57e0c52bc6c9f485d9d9e62d531aa7510f2945a67e33cf8ed3e819e407  # [x86]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [aarch64]
-  sha256: cd8f588a1267e3e36761b7bcdff1b7f36bf43b8ec119667654995bfa5f921fa4  # [aarch64]
+  sha256: 0fa9f1d15656785bcdda844f080b9c26d070a2ece28532e3b1e036386e63ca41  # [aarch64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
-  sha256: 1453282034381be27a16cf826db5d0ea45448401617c451860b2fa333b20ae2f  # [ppc64le]
+  sha256: 223c470d6a346891498e37afded684e32187bee135103edb611ba7f3d2fba87d  # [ppc64le]
+  patches:
+    - no-dtag-flag.patch  # [osx]
 
 build:
   number: 0

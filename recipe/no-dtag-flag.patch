@@ -1,0 +1,13 @@
+diff --git a/stan/lib/stan_math/make/compiler_flags b/stan/lib/stan_math/make/compiler_flags
+index b59b75b7f8..1fe14d9e90 100644
+--- a/stan/lib/stan_math/make/compiler_flags
++++ b/stan/lib/stan_math/make/compiler_flags
+@@ -251,7 +251,7 @@ else
+ CXXFLAGS_TBB ?= -I $(TBB)/include
+ endif
+
+-LDFLAGS_TBB ?= -Wl,-L,"$(TBB_LIB)" -Wl,-rpath,"$(TBB_LIB)" -Wl,--disable-new-dtags -ltbb
++LDFLAGS_TBB ?= -Wl,-L,"$(TBB_LIB)" -Wl,-rpath,"$(TBB_LIB)" -ltbb
+ LDLIBS_TBB ?= $(LDFLAGS_TBB)
+
+ else
