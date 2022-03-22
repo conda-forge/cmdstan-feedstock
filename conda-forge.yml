@@ -3,6 +3,8 @@ linux_aarch64:
   enabled: true
 linux_ppc64le:
   enabled: true
+osx_arm64:
+  enabled: true
 provider:
   linux_aarch64: default
   linux_ppc64le: default
