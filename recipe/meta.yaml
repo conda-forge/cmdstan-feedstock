@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86]
-  sha256: 1900c99015a89fcf718599e0d662476bb370fef7cedc511e9adeeb82ccd75d1e  # [x86]
+  url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86 or osx]
+  sha256: 1900c99015a89fcf718599e0d662476bb370fef7cedc511e9adeeb82ccd75d1e  # [x86 or osx]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [aarch64]
   sha256: 99a608dd242fec09ee5006a847ebdfe2e782c8980daf3c448cb5ff898e9e62e3  # [aarch64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
@@ -16,6 +16,8 @@ source:
     - no-dtag-flag.patch  # [osx]
 
 build:
+  # testing
+  skip: true  # [not osx]
   number: 0
   binary_relocation: false
 
