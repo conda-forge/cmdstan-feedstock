@@ -16,7 +16,7 @@ make print-compiler-flags
 
 make clean-all
 
-make build -j${CPU_COUNT}
+make build -j1 #${CPU_COUNT}
 make build -j${CPU_COUNT} STAN_THREADS=TRUE
 
 # set up an alias. see https://github.com/stan-dev/cmdstan/issues/1024
