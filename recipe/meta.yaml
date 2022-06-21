@@ -16,7 +16,7 @@ source:
     - no-dtag-flag.patch  # [osx]
 
 build:
-  number: 1
+  number: 2
   binary_relocation: false
 
 requirements:
