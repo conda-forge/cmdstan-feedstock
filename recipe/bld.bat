@@ -15,19 +15,19 @@ for %%F in (activate deactivate) DO (
 :: we don't need test files
 del /s /q ".\src\test"
 
-echo d | Xcopy /s /e /y . %PREFIX%\Library\bin\cmdstan > NUL
+echo d | Xcopy /s /e /y . %LIBRARY_BIN%\cmdstan > NUL
 if errorlevel 1 exit 1
 
-cd %PREFIX%\Library\bin\cmdstan
+cd  %LIBRARY_BIN%\cmdstan
 if errorlevel 1 exit 1
 
 echo TBB_CXX_TYPE=clang >> make\local
 if errorlevel 1 exit 1
 echo TBB_INTERFACE_NEW=true >> make/local
 if errorlevel 1 exit 1
-echo TBB_INC=${PREFIX}/Library/include/ >> make/local
+echo TBB_INC="${LIBRARY_INC}" >> make/local
 if errorlevel 1 exit 1
-echo TBB_LIB=${PREFIX}/Library/lib/ >> make/local
+echo TBB_LIB="${LIBRARY_LIB}" >> make/local
 if errorlevel 1 exit 1
 echo CXXFLAGS+=-D_BOOST_LGAMMA >>make/local
 if errorlevel 1 exit 1
@@ -38,7 +38,8 @@ if errorlevel 1 exit 1
 mingw32-make clean-all
 if errorlevel 1 exit 1
 
-mingw32-make build -j%CPU_COUNT%
+mingw32-make build -j1
+::%CPU_COUNT%
 if errorlevel 1 exit 1
 :: also compile threads header
 mingw32-make build -j%CPU_COUNT% STAN_THREADS=TRUE
