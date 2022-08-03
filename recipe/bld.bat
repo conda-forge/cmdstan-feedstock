@@ -1,8 +1,8 @@
 
 :: activate/deactivate setup - cmd, pwsh, and bash
 echo SET CMDSTAN=%PREFIX%\Library\bin\cmdstan\>> %RECIPE_DIR%\activate.bat
-echo $Env:CMDSTAN="%PREFIX%\Library\bin\cmdstan">> %RECIPE_DIR%\activate.ps1
-echo export CMDSTAN=%PREFIX%/Library/bin/cmdstan>> %RECIPE_DIR%\activate.sh
+echo $Env:CMDSTAN="%PREFIX%\Library\bin\cmdstan\">> %RECIPE_DIR%\activate.ps1
+echo export CMDSTAN=%PREFIX%/Library/bin/cmdstan/>> %RECIPE_DIR%\activate.sh
 :: Copy the [de]activate scripts to %PREFIX%\etc\conda\[de]activate.d.
 :: This will allow them to be run on environment activation.
 for %%F in (activate deactivate) DO (
@@ -21,7 +21,13 @@ if errorlevel 1 exit 1
 cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
-echo TBB_CXX_TYPE=gcc >> make\local
+echo TBB_CXX_TYPE=clang >> make\local
+if errorlevel 1 exit 1
+echo TBB_INTERFACE_NEW=true >> make/local
+if errorlevel 1 exit 1
+echo TBB_INC=${PREFIX}/Library/include/ >> make/local
+if errorlevel 1 exit 1
+echo TBB_LIB=${PREFIX}/Library/lib/ >> make/local
 if errorlevel 1 exit 1
 
 mingw32-make print-compiler-flags
