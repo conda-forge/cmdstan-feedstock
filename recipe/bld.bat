@@ -15,24 +15,24 @@ for %%F in (activate deactivate) DO (
 :: we don't need test files
 del /s /q ".\src\test"
 
-echo d | Xcopy /s /e /y . %LIBRARY_BIN%\cmdstan > NUL
+echo d | Xcopy /s /e /y . %PREFIX%\Library\bin\cmdstan > NUL
 if errorlevel 1 exit 1
 
-cd  %LIBRARY_BIN%\cmdstan
+cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
 echo TBB_CXX_TYPE=clang >> make\local
 if errorlevel 1 exit 1
 echo TBB_INTERFACE_NEW=true >> make/local
 if errorlevel 1 exit 1
-echo TBB_INC="%LIBRARY_INC%" >> make/local
+echo TBB_INC=%PREFIX:\=/%/Library/include/ >> make/local
 if errorlevel 1 exit 1
-echo TBB_LIB="%LIBRARY_LIB%" >> make/local
+echo TBB_LIB=%PREFIX:\=/%/Library/lib/ >> make/local
 if errorlevel 1 exit 1
-echo CXXFLAGS+=-D_BOOST_LGAMMA >>make/local
+echo CXXFLAGS+=-D_BOOST_LGAMMA >> make/local
 if errorlevel 1 exit 1
 
-type make/local
+type .\make\local
 
 mingw32-make print-compiler-flags
 if errorlevel 1 exit 1
