@@ -25,12 +25,14 @@ echo TBB_CXX_TYPE=clang >> make\local
 if errorlevel 1 exit 1
 echo TBB_INTERFACE_NEW=true >> make/local
 if errorlevel 1 exit 1
-echo TBB_INC="${LIBRARY_INC}" >> make/local
+echo TBB_INC="%LIBRARY_INC%" >> make/local
 if errorlevel 1 exit 1
-echo TBB_LIB="${LIBRARY_LIB}" >> make/local
+echo TBB_LIB="%LIBRARY_LIB%" >> make/local
 if errorlevel 1 exit 1
 echo CXXFLAGS+=-D_BOOST_LGAMMA >>make/local
 if errorlevel 1 exit 1
+
+type make/local
 
 mingw32-make print-compiler-flags
 if errorlevel 1 exit 1
