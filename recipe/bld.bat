@@ -29,6 +29,8 @@ echo TBB_INC=${PREFIX}/Library/include/ >> make/local
 if errorlevel 1 exit 1
 echo TBB_LIB=${PREFIX}/Library/lib/ >> make/local
 if errorlevel 1 exit 1
+echo CXXFLAGS+=-D_BOOST_LGAMMA >>make/local
+if errorlevel 1 exit 1
 
 mingw32-make print-compiler-flags
 if errorlevel 1 exit 1
