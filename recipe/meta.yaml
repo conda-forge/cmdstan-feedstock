@@ -16,31 +16,30 @@ source:
     - no-dtag-flag.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
+  skip: true  # [not win]
   binary_relocation: false
 
 requirements:
   build:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
-    - {{ compiler('r-clang') }}  # [win]
+    - {{ compiler('clang') }}      # [win]
     - m2w64-make                   # [win]
     - m2-filesystem                # [win]
     - m2-sed                       # [win]
     - m2-coreutils                 # [win]
   host:
-    - tbb-devel                    # [not win]
+    - tbb-devel
   run:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
-    - tbb-devel                    # [not win]
-    - {{ compiler('r-clang') }}  # [win]
+    - tbb-devel
+    - {{ compiler('clang') }}      # [win]
     - m2w64-make                   # [win]
     - m2-filesystem                # [win]
     - m2-sed                       # [win]
     - m2-coreutils                 # [win]
-  run_constrained:
-    - tbb >=2021                   # [win]
 
 test:
   downstreams:
