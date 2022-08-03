@@ -45,6 +45,3 @@ if errorlevel 1 exit 1
 :: not read-only
 attrib -R /S
 if errorlevel 1 exit 1
-
-copy stan\lib\stan_math\lib\tbb\tbb.dll ..
-if errorlevel 1 exit 1
