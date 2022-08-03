@@ -14,6 +14,7 @@ source:
   sha256: 4a314944eb4e61f27e7a30f0aedd129297415386c175cbf02c80711cf0986d55  # [ppc64le]
   patches:
     - no-dtag-flag.patch  # [osx]
+    - no-nan-check.patch  # [win]
 
 build:
   number: 1
