@@ -1,4 +1,8 @@
 
+:: copied from clang, using \=/ to swap paths
+set "LDFLAGS=-nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld -Wl,-defaultlib:%BUILD_PREFIX:\=/%/lib/clang/14.0.3/lib/windows/clang_rt.builtins-x86_64.lib"
+
+
 :: activate/deactivate setup - cmd, pwsh, and bash
 echo SET CMDSTAN=%PREFIX%\Library\bin\cmdstan\>> %RECIPE_DIR%\activate.bat
 echo $Env:CMDSTAN="%PREFIX%\Library\bin\cmdstan\">> %RECIPE_DIR%\activate.ps1
