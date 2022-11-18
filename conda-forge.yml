@@ -1,6 +1,8 @@
 conda_forge_output_validation: true
 linux_aarch64:
-  enabled: True
+  enabled: true
 provider:
   linux_aarch64: default
 test_on_native_only: true
+conda_build:
+  pkg_format: '2'
