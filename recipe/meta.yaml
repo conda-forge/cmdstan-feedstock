@@ -30,10 +30,16 @@ requirements:
     - m2-coreutils                 # [win]
   host:
     - tbb-devel                    # [not win]
+    - eigen == 3.4.0               # [not win]
+    - sundials == 6.1.1            # [not win]
+    - boost-cpp == 1.78.0          # [not win]
   run:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
     - tbb-devel                    # [not win]
+    - eigen == 3.4.0               # [not win]
+    - sundials == 6.1.1            # [not win]
+    - boost-cpp == 1.78.0          # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - m2w64-make                   # [win]
     - m2-filesystem                # [win]
