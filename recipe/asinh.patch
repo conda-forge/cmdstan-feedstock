@@ -1,7 +1,7 @@
-diff --git a/stan/math/prim/fun/asinh.hpp b/stan/math/prim/fun/asinh.hpp
+diff --git a/stan/lib/stan_math/prim/fun/asinh.hpp b/stan/lib/stan_math/prim/fun/asinh.hpp
 index cc8d0d0254..534c247f07 100644
---- a/stan/math/prim/fun/asinh.hpp
-+++ b/stan/math/prim/fun/asinh.hpp
+--- a/stan/lib/stan_math/prim/fun/asinh.hpp
++++ b/stan/lib/stan_math/prim/fun/asinh.hpp
 @@ -60,9 +60,10 @@ namespace internal {
   */
  template <typename V>
