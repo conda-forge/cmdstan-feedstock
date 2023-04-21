@@ -1,7 +1,7 @@
-diff --git a/stan/lib/stan_math/fwd/core/operator_multiplication.hpp b/stan/lib/stan_math/fwd/core/operator_multiplication.hpp
+diff --git a/stan/lib/stan_math/stan/math/fwd/core/operator_multiplication.hpp b/stan/lib/stan_math/stan/math/fwd/core/operator_multiplication.hpp
 index baf5e118e5f..02bd9ae87ea 100644
---- a/stan/lib/stan_math/fwd/core/operator_multiplication.hpp
-+++ b/stan/lib/stan_math/fwd/core/operator_multiplication.hpp
+--- a/stan/lib/stan_math/stan/math/fwd/core/operator_multiplication.hpp
++++ b/stan/lib/stan_math/stan/math/fwd/core/operator_multiplication.hpp
 @@ -2,6 +2,7 @@
  #define STAN_MATH_FWD_CORE_OPERATOR_MULTIPLICATION_HPP
 
@@ -62,10 +62,10 @@ index baf5e118e5f..02bd9ae87ea 100644
  }  // namespace math
  }  // namespace stan
  #endif
-diff --git a/stan/lib/stan_math/rev/core/operator_multiplication.hpp b/stan/lib/stan_math/rev/core/operator_multiplication.hpp
+diff --git a/stan/lib/stan_math/stan/math/rev/core/operator_multiplication.hpp b/stan/lib/stan_math/stan/math/rev/core/operator_multiplication.hpp
 index 6e0a81ea244..b5a1955cf49 100644
---- a/stan/lib/stan_math/rev/core/operator_multiplication.hpp
-+++ b/stan/lib/stan_math/rev/core/operator_multiplication.hpp
+--- a/stan/lib/stan_math/stan/math/rev/core/operator_multiplication.hpp
++++ b/stan/lib/stan_math/stan/math/rev/core/operator_multiplication.hpp
 @@ -5,6 +5,7 @@
  #include <stan/math/rev/core/var.hpp>
  #include <stan/math/rev/core/vv_vari.hpp>
