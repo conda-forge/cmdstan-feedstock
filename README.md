@@ -1,11 +1,11 @@
-About cmdstan
-=============
+About cmdstan-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cmdstan-feedstock/blob/main/LICENSE.txt)
 
 Home: https://mc-stan.org/users/interfaces/cmdstan.html
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cmdstan-feedstock/blob/main/LICENSE.txt)
 
 Summary: CmdStan, the command line interface to Stan
 
@@ -219,7 +219,4 @@ Feedstock Maintainers
 
 * [@WardBrian](https://github.com/WardBrian/)
 * [@maresb](https://github.com/maresb/)
-
-
-<!-- dummy commit to enable rerendering -->
 
