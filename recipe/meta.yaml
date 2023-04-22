@@ -16,12 +16,13 @@ source:
     - no-dtag-flag.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   binary_relocation: false
 
 requirements:
   build:
     - {{ compiler('cxx') }}        # [not win]
+    - libcxx <=15                  # [osx]
     - make                         # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - m2w64-make                   # [win]
@@ -32,6 +33,7 @@ requirements:
     - tbb-devel                    # [not win]
   run:
     - {{ compiler('cxx') }}        # [not win]
+    - libcxx <=15                  # [osx]
     - make                         # [not win]
     - tbb-devel                    # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
