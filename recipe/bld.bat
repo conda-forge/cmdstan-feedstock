@@ -23,13 +23,15 @@ if errorlevel 1 exit 1
 
 set "fwd_slash_prefix=%PREFIX:\=/%"
 
-echo CC=clang >> make\local
+echo "Setting up make/local"
+
+echo CC=clang >> make/local
 if errorlevel 1 exit 1
-echo CXX=clang++ >> make\local
+echo CXX=clang++ >> make/local
 if errorlevel 1 exit 1
 
 :: TBB setup
-echo TBB_CXX_TYPE=gcc >> make\local
+echo TBB_CXX_TYPE=gcc >> make/local
 if errorlevel 1 exit 1
 echo TBB_INTERFACE_NEW=true >> make/local
 if errorlevel 1 exit 1
@@ -68,6 +70,7 @@ if errorlevel 1 exit 1
 mingw32-make clean-all
 if errorlevel 1 exit 1
 
+echo "Attempting to build"
 
 :: for now, just try to build bernoulli
 
