@@ -23,44 +23,49 @@ if errorlevel 1 exit 1
 
 set "fwd_slash_prefix=%PREFIX:\=/%"
 
-echo "Setting up make/local"
+echo "Setting up make\local"
 
-echo CC=clang >> make/local
+echo CC=clang >> make\local
 if errorlevel 1 exit 1
-echo CXX=clang++ >> make/local
+echo CXX=clang++ >> make\local
 if errorlevel 1 exit 1
+
+echo "TBB"
 
 :: TBB setup
-echo TBB_CXX_TYPE=gcc >> make/local
+echo TBB_CXX_TYPE=clang >> make\local
 if errorlevel 1 exit 1
-echo TBB_INTERFACE_NEW=true >> make/local
+echo TBB_INTERFACE_NEW=true >> make\local
 if errorlevel 1 exit 1
-echo TBB_INC=%fwd_slash_prefix%/Library/include >> make/local
+echo TBB_INC=%PREFIX:\=/%/Library/include/ >> make\local
 if errorlevel 1 exit 1
-echo TBB_LIB=%fwd_slash_prefix%/Library/lib >> make/local
-if errorlevel 1 exit 1
+echo TBB_LIB=%PREFIX:\=/%/Library/lib/ >> make\local
+
+echo "Eigen and Boost"
 
 :: Eigen setup
-echo EIGEN=%fwd_slash_prefix%/Library/include/eigen3/ >> make/local
+echo EIGEN=%PREFIX:\=/%/Library/include/eigen3/ >> make\local
 if errorlevel 1 exit 1
 :: Boost setup
-echo BOOST=%fwd_slash_prefix%/Library/include/boost/ >> make/local
+echo BOOST=%PREFIX:\=/%/Library/include/boost/ >> make\local
 if errorlevel 1 exit 1
+
+echo "Sundials"
 
 :: SUNDIALS setup
-echo INC_SUNDIALS= -I %fwd_slash_prefix%/Library/include/  >> make/local
+echo INC_SUNDIALS= -I %PREFIX:\=/%/Library/include/  >> make\local
 if errorlevel 1 exit 1
-echo LDFLAGS_SUNDIALS= -L %fwd_slash_prefix%/Library/lib/ >> make/local
+echo LDFLAGS_SUNDIALS= -L %PREFIX:\=/%Library/lib/ >> make\local
 if errorlevel 1 exit 1
-echo LDLIBS_SUNDIALS= -lsundials_cvodes -lsundials_idas -lsundials_kinsol -lsundials_nvecserial >> make/local
+echo LDLIBS_SUNDIALS= -lsundials_cvodes -lsundials_idas -lsundials_kinsol -lsundials_nvecserial >> make\local
 if errorlevel 1 exit 1
-echo SUNDIALS_TARGETS= >> make/local
-if errorlevel 1 exit 1
-
-echo PRECOMPILED_HEADERS=false >> make/local
+echo SUNDIALS_TARGETS="" >> make\local
 if errorlevel 1 exit 1
 
-type make/local
+echo PRECOMPILED_HEADERS=false >> make\local
+if errorlevel 1 exit 1
+
+type make\local
 if errorlevel 1 exit 1
 
 
