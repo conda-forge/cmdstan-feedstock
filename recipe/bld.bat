@@ -23,6 +23,10 @@ if errorlevel 1 exit 1
 
 set "fwd_slash_prefix=%PREFIX:\=/%"
 
+echo CC=clang >> make\local
+if errorlevel 1 exit 1
+echo CXX=clang++ >> make\local
+if errorlevel 1 exit 1
 
 :: TBB setup
 echo TBB_CXX_TYPE=gcc >> make\local

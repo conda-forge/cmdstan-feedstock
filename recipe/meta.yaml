@@ -16,6 +16,7 @@ source:
     - no-dtag-flag.patch  # [osx]
 
 build:
+  skip: True # [not win]
   number: 2
   binary_relocation: false
 
@@ -24,6 +25,7 @@ requirements:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
     - clang                        # [win]
+      # maybe compiler('r_clang') instead?
   host:
     - tbb-devel
     - eigen ==3.4.0
