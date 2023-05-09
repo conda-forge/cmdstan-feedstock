@@ -69,11 +69,11 @@ type make\local
 if errorlevel 1 exit 1
 
 
-mingw32-make print-compiler-flags
-if errorlevel 1 exit 1
+::mingw32-make print-compiler-flags
+::if errorlevel 1 exit 1
 
-mingw32-make clean-all
-if errorlevel 1 exit 1
+::mingw32-make clean-all
+::if errorlevel 1 exit 1
 
 echo "Attempting to build"
 
