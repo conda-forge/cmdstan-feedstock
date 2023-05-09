@@ -16,41 +16,31 @@ source:
     - no-dtag-flag.patch  # [osx]
 
 build:
-  number: 1
+  number: 2
   binary_relocation: false
 
 requirements:
   build:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
-    - {{ compiler('m2w64_cxx') }}  # [win]
-    - m2w64-make                   # [win]
-    - m2-filesystem                # [win]
-    - m2-sed                       # [win]
-    - m2-coreutils                 # [win]
+    - clang                        # [win]
   host:
-    - tbb-devel                    # [not win]
-    - eigen ==3.4.0                # [not win]
-    - sundials ==6.1.1             # [not win]
-    - boost-cpp ==1.78.0           # [not win]
+    - tbb-devel
+    - eigen ==3.4.0
+    - sundials ==6.1.1
+    - boost-cpp ==1.78.0
   run:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
-    - tbb-devel                    # [not win]
-    - eigen ==3.4.0                # [not win]
-    - sundials ==6.1.1             # [not win]
-    - boost-cpp ==1.78.0           # [not win]
-    - {{ compiler('m2w64_cxx') }}  # [win]
-    - m2w64-make                   # [win]
-    - m2-filesystem                # [win]
-    - m2-sed                       # [win]
-    - m2-coreutils                 # [win]
-  run_constrained:
-    - tbb >=2021                   # [win]
+    - tbb-devel
+    - eigen ==3.4.0
+    - sundials ==6.1.1
+    - boost-cpp ==1.78.0
+    - clang                        # [win]
 
-test:
-  downstreams:
-    - cmdstanpy
+# test:
+#   downstreams:
+#     - cmdstanpy
 
 about:
   home: https://mc-stan.org/users/interfaces/cmdstan.html
