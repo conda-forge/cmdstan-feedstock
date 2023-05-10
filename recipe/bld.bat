@@ -30,6 +30,8 @@ if errorlevel 1 exit 1
 echo CXX=clang++ >> make\local
 if errorlevel 1 exit 1
 
+echo LDFLAGS=-nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld -Wl,-defaultlib:%BUILD_PREFIX:\=/%/lib/clang/14.0.3/lib/windows/clang_rt.builtins-x86_64.lib >> make/local
+
 echo "TBB"
 
 :: TBB setup
@@ -68,6 +70,8 @@ if errorlevel 1 exit 1
 type make\local
 if errorlevel 1 exit 1
 
+mingw32-make build -j1
+if errorlevel 1 exit 1
 
 ::mingw32-make print-compiler-flags
 ::if errorlevel 1 exit 1
