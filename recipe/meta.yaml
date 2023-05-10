@@ -24,6 +24,10 @@ requirements:
   build:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
+    - m2w64-make                   # [win]
+    - m2-filesystem                # [win]
+    - m2-sed                       # [win]
+    - m2-coreutils                 # [win]
     - clang                        # [win]
       # maybe compiler('r_clang') instead?
   host:
@@ -34,6 +38,11 @@ requirements:
   run:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
+    - m2w64-make                   # [win]
+    - m2-filesystem                # [win]
+    - m2-sed                       # [win]
+    - m2-coreutils                 # [win]
+    - clang                        # [win]
     - tbb-devel
     - eigen ==3.4.0
     - sundials ==6.1.1
