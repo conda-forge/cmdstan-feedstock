@@ -24,6 +24,7 @@ requirements:
     - {{ compiler('cxx') }}        # [not win]
     - make                         # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ stdlib("c") }}
     - m2w64-make                   # [win]
     - m2-filesystem                # [win]
     - m2-sed                       # [win]
@@ -32,10 +33,11 @@ requirements:
     - tbb-devel                    # [not win]
   run:
     - {{ compiler('cxx') }}        # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - make                         # [not win]
     - tbb-devel                    # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
-    - {{ stdlib("c") }}    # [win]
+    - {{ stdlib("c") }}
     - m2w64-make                   # [win]
     - m2-filesystem                # [win]
     - m2-sed                       # [win]
