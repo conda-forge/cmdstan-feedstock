@@ -12,8 +12,6 @@ source:
   sha256: 87ea47f0576d581f0af7e3c1a2f9843d16a9c7b21ed94621c906f7a3183b410d  # [aarch64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
   sha256: b36fcd962269759b5cef51da9585ceb73e7bea28d73f5eba00afdb1022f69cb0  # [ppc64le]
-  patches:
-    - no-dtag-flag.patch  # [osx]
 
 build:
   number: 0
