@@ -22,6 +22,8 @@ cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
 echo TBB_CXX_TYPE=gcc >> make\local
+echo CXX=x86_64-w64-mingw32-g++ >> make\local
+echo CC=x86_64-w64-mingw32-gcc >> make\local
 if errorlevel 1 exit 1
 
 make print-compiler-flags
