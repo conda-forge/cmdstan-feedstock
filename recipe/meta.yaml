@@ -23,7 +23,6 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - {{ posix }}make
-    - m2w64-make                   # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
@@ -34,7 +33,6 @@ requirements:
     - {{ stdlib("c") }}
     - {{ posix }}make
     - tbb-devel                    # [not win]
-    - m2w64-make                   # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
