@@ -24,16 +24,16 @@ if errorlevel 1 exit 1
 echo TBB_CXX_TYPE=gcc >> make\local
 if errorlevel 1 exit 1
 
-mingw32-make print-compiler-flags
+make print-compiler-flags
 if errorlevel 1 exit 1
 
-mingw32-make clean-all
+make clean-all
 if errorlevel 1 exit 1
 
-mingw32-make build -j%CPU_COUNT%
+make build -j%CPU_COUNT%
 if errorlevel 1 exit 1
 :: also compile threads header
-mingw32-make build -j%CPU_COUNT% STAN_THREADS=TRUE
+make build -j%CPU_COUNT% STAN_THREADS=TRUE
 if errorlevel 1 exit 1
 
 :: not read-only
