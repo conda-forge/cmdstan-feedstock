@@ -29,7 +29,7 @@ echo CC=clang >> make\local
 if errorlevel 1 exit 1
 echo CXX=clang++ >> make\local
 if errorlevel 1 exit 1
-echo "CXXFLAGS+=-D_REENTRANT -DBOOST_DISABLE_ASSERTS -D_BOOST_LGAMMA"  >> make\local
+echo CXXFLAGS+=-D_REENTRANT -DBOOST_DISABLE_ASSERTS -D_BOOST_LGAMMA  >> make\local
 if errorlevel 1 exit 1
 
 echo "TBB"
