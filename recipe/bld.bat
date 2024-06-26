@@ -29,8 +29,8 @@ echo CC=clang >> make\local
 if errorlevel 1 exit 1
 echo CXX=clang++ >> make\local
 if errorlevel 1 exit 1
-
-::echo LDFLAGS=-nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld -Wl,-defaultlib:%BUILD_PREFIX:\=/%/lib/clang/14.0.3/lib/windows/clang_rt.builtins-x86_64.lib >> make/local
+echo "CXXFLAGS+=-D_REENTRANT -DBOOST_DISABLE_ASSERTS -D_BOOST_LGAMMA"  >> make\local
+if errorlevel 1 exit 1
 
 echo "TBB"
 
