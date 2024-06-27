@@ -21,6 +21,15 @@ if errorlevel 1 exit 1
 cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
+
+:: need to read clang version for path to compiler-rt
+FOR /F "tokens=* USEBACKQ" %%F IN (`clang.exe -dumpversion`) DO (
+    SET "CLANG_VER=%%F"
+)
+
+set "LDFLAGS=--target=x86_64-pc-windows-msvc -nostdlib -Xclang --dependent-lib=msvcrt -fuse-ld=lld"
+set "LDFLAGS=%LDFLAGS% -Wl,-defaultlib:%BUILD_PREFIX%/Library/lib/clang/!CLANG_VER:~0,2!/lib/windows/clang_rt.builtins-x86_64.lib"
+
 set "fwd_slash_prefix=%PREFIX:\=/%"
 
 echo "Setting up make\local"
