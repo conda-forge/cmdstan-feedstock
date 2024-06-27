@@ -1,3 +1,6 @@
+@echo on
+setlocal enabledelayedexpansion
+
 
 :: activate/deactivate setup - cmd, pwsh, and bash
 echo SET CMDSTAN=%PREFIX%\Library\bin\cmdstan\>> %RECIPE_DIR%\activate.bat
