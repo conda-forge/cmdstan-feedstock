@@ -13,6 +13,8 @@ if errorlevel 1 exit 1
 bin\stansummary.exe --help
 if errorlevel 1 exit 1
 
+make
+
 make print-compiler-flags
 make print-EXE
 
