@@ -1,3 +1,4 @@
+@echo on
 
 :: activate/deactivate setup - cmd, pwsh, and bash
 echo SET CMDSTAN=%PREFIX%\Library\bin\cmdstan\>> %RECIPE_DIR%\activate.bat
@@ -21,24 +22,46 @@ if errorlevel 1 exit 1
 cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
-echo TBB_CXX_TYPE=gcc >> make\local
+set "fwd_slash_prefix=%PREFIX:\=/%"
+
+echo "Setting up make\local"
+
+echo CC=clang >> make\local
+if errorlevel 1 exit 1
+echo CXX=clang++ >> make\local
+if errorlevel 1 exit 1
+echo CXXFLAGS+=-D_REENTRANT -DBOOST_DISABLE_ASSERTS -D_BOOST_LGAMMA  >> make\local
 if errorlevel 1 exit 1
 
-mingw32-make print-compiler-flags
+echo "TBB"
+
+:: TBB setup
+echo TBB_CXX_TYPE=clang >> make\local
+if errorlevel 1 exit 1
+echo TBB_INTERFACE_NEW=true >> make\local
+if errorlevel 1 exit 1
+echo TBB_INC=%PREFIX:\=/%/Library/include/ >> make\local
+if errorlevel 1 exit 1
+echo TBB_LIB=%PREFIX:\=/%/Library/lib/ >> make\local
 if errorlevel 1 exit 1
 
-mingw32-make clean-all
+echo PRECOMPILED_HEADERS=false >> make\local
 if errorlevel 1 exit 1
 
-mingw32-make build -j%CPU_COUNT%
+type make\local
+if errorlevel 1 exit 1
+
+make print-compiler-flags
+if errorlevel 1 exit 1
+
+echo "Attempting to build"
+
+make build -j%CPU_COUNT%
 if errorlevel 1 exit 1
 :: also compile threads header
-mingw32-make build -j%CPU_COUNT% STAN_THREADS=TRUE
+make build -j%CPU_COUNT% STAN_THREADS=TRUE
 if errorlevel 1 exit 1
 
 :: not read-only
 attrib -R /S
-if errorlevel 1 exit 1
-
-copy stan\lib\stan_math\lib\tbb\tbb.dll ..
 if errorlevel 1 exit 1
