@@ -4,12 +4,17 @@ echo %CMDSTAN%
 cd %PREFIX%\Library\bin\cmdstan
 
 dir
+dir examples
+dir examples\bernoulli
 
 :: test binaries
 bin\stanc.exe --help
 if errorlevel 1 exit 1
 bin\stansummary.exe --help
 if errorlevel 1 exit 1
+
+make print-compiler-flags
+make print-EXE
 
 :: run bernoulli example
 make -d examples/bernoulli/bernoulli.exe
