@@ -10,5 +10,3 @@ provider:
 conda_build:
   pkg_format: '2'
 test: native_and_emulated
-azure:
-    store_build_artifacts: True
