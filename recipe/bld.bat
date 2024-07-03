@@ -15,6 +15,9 @@ for %%F in (activate deactivate) DO (
 
 :: we don't need test files
 del /s /q ".\src\test"
+del /s /q ".\stan\src\test"
+del /s /q ".\stan\lib\stan_math\test"
+
 
 :: or non-windows stancs
 del /s /q ".\bin\linux-stanc"
