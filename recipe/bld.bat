@@ -16,6 +16,10 @@ for %%F in (activate deactivate) DO (
 :: we don't need test files
 del /s /q ".\src\test"
 
+:: or non-windows stancs
+del /s /q ".\bin\linux-stanc"
+del /s /q ".\bin\mac-stanc"
+
 echo d | Xcopy /s /e /y . %PREFIX%\Library\bin\cmdstan > NUL
 if errorlevel 1 exit 1
 

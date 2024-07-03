@@ -1,5 +1,6 @@
 # don't need test files
 rm -rf src/test
+rm -rf bin/windows-stanc
 
 mkdir -p $PREFIX/bin
 cp -r . $PREFIX/bin/cmdstan
