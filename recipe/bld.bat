@@ -29,18 +29,14 @@ if errorlevel 1 exit 1
 cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
-set "fwd_slash_prefix=%PREFIX:\=/%"
-
 echo "Setting up make\local"
 
 echo CC=clang >> make\local
 if errorlevel 1 exit 1
 echo CXX=clang++ >> make\local
 if errorlevel 1 exit 1
-echo CXXFLAGS+=-D_REENTRANT -DBOOST_DISABLE_ASSERTS -D_BOOST_LGAMMA  >> make\local
+echo CPPFLAGS+=-D_REENTRANT -DBOOST_DISABLE_ASSERTS -D_BOOST_LGAMMA  >> make\local
 if errorlevel 1 exit 1
-
-echo "TBB"
 
 :: TBB setup
 echo TBB_CXX_TYPE=clang >> make\local
@@ -61,7 +57,8 @@ if errorlevel 1 exit 1
 make print-compiler-flags
 if errorlevel 1 exit 1
 
-echo "Attempting to build"
+make clean-all
+if errorlevel 1 exit 1
 
 make build -j%CPU_COUNT%
 if errorlevel 1 exit 1
