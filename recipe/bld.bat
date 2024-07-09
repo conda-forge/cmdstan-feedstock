@@ -15,6 +15,9 @@ for %%F in (activate deactivate) DO (
 :: we don't need test files
 del /s /q ".\src\test"
 
+where g++
+g++ --version
+
 echo d | Xcopy /s /e /y . %PREFIX%\Library\bin\cmdstan > NUL
 if errorlevel 1 exit 1
 
