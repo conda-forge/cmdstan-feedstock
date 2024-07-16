@@ -32,6 +32,9 @@ if errorlevel 1 exit 1
 echo TBB_CXX_TYPE=gcc >> make\local
 if errorlevel 1 exit 1
 
+echo CXXFLAGS+=-Wno-misleading-indentation >> make\local
+if errorlevel 1 exit 1
+
 type make\local
 if errorlevel 1 exit 1
 
