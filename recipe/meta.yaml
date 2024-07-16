@@ -31,8 +31,10 @@ requirements:
   host:
     - tbb-devel                    # [not win]
   run:
-    - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ stdlib("c") }}            # [not win]
+    - gxx                          # [win]
+    - gcc                          # [win]
     - {{ posix }}make
     - tbb-devel                    # [not win]
     - {{ posix }}filesystem        # [win]
