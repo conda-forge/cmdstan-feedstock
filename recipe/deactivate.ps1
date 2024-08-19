@@ -1,2 +1,4 @@
+$Env:MAKE=$Env:MAKE_OLD
+$Env:MAKE_OLD=$null
 $Env:CMDSTAN=$Env:CMDSTAN_OLD
 $Env:CMDSTAN_OLD=$null
