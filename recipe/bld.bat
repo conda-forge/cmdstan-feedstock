@@ -47,10 +47,10 @@ if errorlevel 1 exit 1
 make clean-all
 if errorlevel 1 exit 1
 
-make build -j%CPU_COUNT%
+make build
 if errorlevel 1 exit 1
 :: also compile threads header
-make build -j%CPU_COUNT% STAN_THREADS=TRUE
+make build STAN_THREADS=TRUE
 if errorlevel 1 exit 1
 
 :: not read-only
