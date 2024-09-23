@@ -27,8 +27,14 @@ dir examples\bernoulli
 make examples/bernoulli/bernoulli.exe STAN_THREADS=TRUE
 if errorlevel 1 exit 1
 examples\bernoulli\bernoulli.exe
+if errorlevel 1 exit 1
 examples\bernoulli\bernoulli.exe sample num_chains=2 data file=examples/bernoulli/bernoulli.data.json num_threads=2
 if errorlevel 1 exit 1
+
+dir
+if errorlevel 1 exit 1
+
+
 bin\stansummary.exe output_2.csv
 if errorlevel 1 exit 1
 
