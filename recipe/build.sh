@@ -1,5 +1,8 @@
 # don't need test files
 rm -rf src/test
+rm -rf stan/src/test
+rm -rf stan/lib/stan_math/test
+rm -rf bin/windows-stanc
 
 mkdir -p $PREFIX/bin
 cp -r . $PREFIX/bin/cmdstan

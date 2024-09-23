@@ -1,5 +1,6 @@
 {% set name = "cmdstan" %}
 {% set version = "2.35.0" %}
+{% set posix = 'm2-' if win else '' %}
 
 package:
   name: {{ name|lower }}
@@ -14,33 +15,31 @@ source:
   sha256: b36fcd962269759b5cef51da9585ceb73e7bea28d73f5eba00afdb1022f69cb0  # [ppc64le]
 
 build:
-  number: 1
+  number: 2
   binary_relocation: false
 
 requirements:
   build:
     - {{ compiler('cxx') }}        # [not win]
     - {{ stdlib("c") }}            # [not win]
-    - make                         # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
-    - m2w64-make                   # [win]
-    - m2-filesystem                # [win]
-    - m2-sed                       # [win]
-    - m2-coreutils                 # [win]
+    - {{ posix }}make
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
   host:
     - tbb-devel                    # [not win]
   run:
     - {{ compiler('cxx') }}        # [not win]
     - {{ stdlib("c") }}            # [not win]
-    - make                         # [not win]
-    - tbb-devel                    # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
-    - m2w64-make                   # [win]
-    - m2-filesystem                # [win]
-    - m2-sed                       # [win]
-    - m2-coreutils                 # [win]
+    - {{ posix }}make
+    - tbb-devel                    # [not win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
     - gxx_{{ target_platform }} >={{ cxx_compiler_version }}  # [linux]
   run_constrained:
     - tbb >=2021                   # [win]
@@ -48,7 +47,7 @@ requirements:
 test:
   downstreams:
     - cmdstanpy
-    - r-cmdstanr
+    - r-cmdstanr                   # [not win]
 
 about:
   home: https://mc-stan.org/users/interfaces/cmdstan.html
