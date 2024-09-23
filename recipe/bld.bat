@@ -1,3 +1,4 @@
+@echo on
 
 :: activate/deactivate setup - cmd, pwsh, and bash
 echo SET CMDSTAN=%PREFIX%\Library\bin\cmdstan\>> %RECIPE_DIR%\activate.bat
@@ -14,6 +15,13 @@ for %%F in (activate deactivate) DO (
 
 :: we don't need test files
 del /s /q ".\src\test"
+del /s /q ".\stan\src\test"
+del /s /q ".\stan\lib\stan_math\test"
+
+
+:: or non-windows stancs
+del /s /q ".\bin\linux-stanc"
+del /s /q ".\bin\mac-stanc"
 
 echo d | Xcopy /s /e /y . %PREFIX%\Library\bin\cmdstan > NUL
 if errorlevel 1 exit 1
@@ -24,16 +32,25 @@ if errorlevel 1 exit 1
 echo TBB_CXX_TYPE=gcc >> make\local
 if errorlevel 1 exit 1
 
-mingw32-make print-compiler-flags
+echo CXXFLAGS+=-Wno-misleading-indentation >> make\local
 if errorlevel 1 exit 1
 
-mingw32-make clean-all
+echo PRECOMPILED_HEADERS=false >> make\local
 if errorlevel 1 exit 1
 
-mingw32-make build -j%CPU_COUNT%
+type make\local
+if errorlevel 1 exit 1
+
+make print-compiler-flags
+if errorlevel 1 exit 1
+
+make clean-all
+if errorlevel 1 exit 1
+
+make build
 if errorlevel 1 exit 1
 :: also compile threads header
-mingw32-make build -j%CPU_COUNT% STAN_THREADS=TRUE
+make build STAN_THREADS=TRUE
 if errorlevel 1 exit 1
 
 :: not read-only

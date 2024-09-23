@@ -1,5 +1,6 @@
 {% set name = "cmdstan" %}
 {% set version = "2.35.0" %}
+{% set posix = 'm2-' if win else '' %}
 
 package:
   name: {{ name|lower }}
@@ -21,26 +22,24 @@ requirements:
   build:
     - {{ compiler('cxx') }}        # [not win]
     - {{ stdlib("c") }}            # [not win]
-    - make                         # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
-    - m2w64-make                   # [win]
-    - m2-filesystem                # [win]
-    - m2-sed                       # [win]
-    - m2-coreutils                 # [win]
+    - {{ posix }}make
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
   host:
     - tbb-devel                    # [not win]
   run:
     - {{ compiler('cxx') }}        # [not win]
     - {{ stdlib("c") }}            # [not win]
-    - make                         # [not win]
-    - tbb-devel                    # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
-    - m2w64-make                   # [win]
-    - m2-filesystem                # [win]
-    - m2-sed                       # [win]
-    - m2-coreutils                 # [win]
+    - {{ posix }}make
+    - tbb-devel                    # [not win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
     - gxx_{{ target_platform }} >={{ cxx_compiler_version }}  # [linux]
   run_constrained:
     - tbb >=2021                   # [win]
