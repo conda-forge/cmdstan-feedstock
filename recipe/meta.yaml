@@ -17,7 +17,7 @@ source:
     - tbb-detection.patch  # [win]
 
 build:
-  number: 2
+  number: 4
   binary_relocation: false
 
 requirements:
