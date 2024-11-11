@@ -35,6 +35,8 @@ echo CC=clang >> make\local
 if errorlevel 1 exit 1
 echo CXX=clang++ >> make\local
 if errorlevel 1 exit 1
+echo LINK=lld.exe >> make\local
+if errorlevel 1 exit 1
 echo CPPFLAGS+=-D_REENTRANT -DBOOST_DISABLE_ASSERTS -D_BOOST_LGAMMA  >> make\local
 if errorlevel 1 exit 1
 echo CXXFLAGS+=-Wno-misleading-indentation >> make\local
