@@ -4,6 +4,11 @@ echo %CMDSTAN%
 cd %PREFIX%\Library\bin\cmdstan
 if errorlevel 1 exit 1
 
+type make\local
+if errorlevel 1 exit 1
+
+make print-compiler-flags
+if errorlevel 1 exit 1
 
 :: test binaries
 bin\stanc.exe --help
