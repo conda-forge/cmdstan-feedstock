@@ -37,6 +37,8 @@ echo CXX=clang++ >> make\local
 if errorlevel 1 exit 1
 echo CPPFLAGS+=-D_REENTRANT -DBOOST_DISABLE_ASSERTS -D_BOOST_LGAMMA  >> make\local
 if errorlevel 1 exit 1
+echo CXXFLAGS+=-Wno-misleading-indentation >> make\local
+if errorlevel 1 exit 1
 
 :: TBB setup
 echo TBB_CXX_TYPE=clang >> make\local
@@ -60,10 +62,11 @@ if errorlevel 1 exit 1
 make clean-all
 if errorlevel 1 exit 1
 
-make build -j%CPU_COUNT%
+make build
 if errorlevel 1 exit 1
+
 :: also compile threads header
-make build -j%CPU_COUNT% STAN_THREADS=TRUE
+make build STAN_THREADS=TRUE
 if errorlevel 1 exit 1
 
 :: not read-only
