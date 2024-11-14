@@ -1,0 +1,13 @@
+diff --git a/make/program b/make/program
+index dc21672..8e134d3 100644
+--- a/make/program
++++ b/make/program
+@@ -79,7 +79,7 @@ endif
+ %$(EXE) : %.o $(CMDSTAN_MAIN_O) $(SUNDIALS_TARGETS) $(MPI_TARGETS) $(TBB_TARGETS) $(PRECOMPILED_MODEL_HEADER)
+ 	@echo ''
+ 	@echo '--- Linking model ---'
+-	$(LINK.cpp) $(subst \,/,$*.o) $(CMDSTAN_MAIN_O) $(LDLIBS) $(SUNDIALS_TARGETS) $(MPI_TARGETS) $(TBB_TARGETS) $(subst \,/,$(OUTPUT_OPTION))
++	$(LINK.cpp) $(CMDSTAN_MAIN_O) $(subst \,/,$*.o) $(LDLIBS) $(SUNDIALS_TARGETS) $(MPI_TARGETS) $(TBB_TARGETS) $(subst \,/,$(OUTPUT_OPTION))
+
+ ifeq ($(OS),Windows_NT)
+ ifneq (,$(TBB_TARGETS))
