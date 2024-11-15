@@ -15,7 +15,6 @@ source:
   sha256: b36fcd962269759b5cef51da9585ceb73e7bea28d73f5eba00afdb1022f69cb0  # [ppc64le]
   patches:
     - tbb-detection.patch  # [win]
-    - link-order.patch  # [win]
 
 build:
   number: 4
@@ -36,7 +35,10 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - {{ posix }}make
-    - tbb-devel
+    - tbb-devel                            # [not win]
+    # it appears that lld is stricter about name changes,
+    # so tbb2022 is not compatible with tbb2021 on Windows
+    - {{ pin_compatible('tbb-devel', max_pin=None) }} # [win]
     - compiler-rt                          # [win]
     - {{ posix }}filesystem                # [win]
     - {{ posix }}sed                       # [win]
