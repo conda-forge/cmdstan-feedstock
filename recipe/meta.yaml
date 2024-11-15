@@ -38,7 +38,7 @@ requirements:
     - tbb-devel                            # [not win]
     # it appears that lld is stricter about name changes,
     # so tbb2022 is not compatible with tbb2021 on Windows
-    - {{ pin_compatible('tbb-devel', max_pin=None) }}  # [win]
+    - {{ pin_compatible('tbb-devel') }}  # [win]
     - compiler-rt                          # [win]
     - {{ posix }}filesystem                # [win]
     - {{ posix }}sed                       # [win]
