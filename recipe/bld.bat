@@ -17,6 +17,9 @@ for %%F in (activate deactivate) DO (
 del /s /q ".\src\test"
 del /s /q ".\stan\src\test"
 del /s /q ".\stan\lib\stan_math\test"
+del /s /q ".\stan\lib\stan_math\lib\cpplint_1.4.5"
+del /s /q ".\stan\lib\stan_math\lib\tbb_2020.3"
+del /s /q ".\stan\lib\stan_math\lib\benchmark_1.5.1"
 
 
 :: or non-windows stancs

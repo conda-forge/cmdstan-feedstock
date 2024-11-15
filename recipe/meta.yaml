@@ -14,7 +14,7 @@ source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
   sha256: b36fcd962269759b5cef51da9585ceb73e7bea28d73f5eba00afdb1022f69cb0  # [ppc64le]
   patches:
-    - tbb-detection.patch  # [win]
+    - tbb-detection.patch     # [win]
 
 build:
   number: 4
@@ -25,31 +25,31 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - {{ posix }}make
-    - {{ posix }}filesystem                # [win]
-    - {{ posix }}sed                       # [win]
-    - {{ posix }}coreutils                 # [win]
+    - {{ posix }}filesystem   # [win]
+    - {{ posix }}sed          # [win]
+    - {{ posix }}coreutils    # [win]
   host:
     - tbb-devel
-    - compiler-rt                          # [win]
+    - compiler-rt             # [win]
   run:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - {{ posix }}make
-    - tbb-devel                            # [not win]
+    - tbb-devel               # [not win]
     # it appears that lld is stricter about name changes,
     # so tbb2022 is not compatible with tbb2021 on Windows
     - {{ pin_compatible('tbb-devel') }}  # [win]
-    - compiler-rt                          # [win]
-    - {{ posix }}filesystem                # [win]
-    - {{ posix }}sed                       # [win]
-    - {{ posix }}coreutils                 # [win]
+    - compiler-rt             # [win]
+    - {{ posix }}filesystem   # [win]
+    - {{ posix }}sed          # [win]
+    - {{ posix }}coreutils    # [win]
     - gxx_{{ target_platform }} >={{ cxx_compiler_version }}  # [linux]
 
 
 test:
   downstreams:
     - cmdstanpy
-    - r-cmdstanr                   # [not win]
+    - r-cmdstanr              # [not win]
 
 about:
   home: https://mc-stan.org/users/interfaces/cmdstan.html

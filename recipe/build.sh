@@ -2,6 +2,9 @@
 rm -rf src/test
 rm -rf stan/src/test
 rm -rf stan/lib/stan_math/test
+rm -rf stan/lib/stan_math/lib/tbb_2020.3
+rm -rf stan/lib/stan_math/lib/cpplint_1.4.5
+rm -rf stan/lib/stan_math/lib/benchmark_1.5.1
 rm -rf bin/windows-stanc
 
 mkdir -p $PREFIX/bin
