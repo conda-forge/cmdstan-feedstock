@@ -49,8 +49,6 @@ echo TBB_INC=%PREFIX:\=/%/Library/include/ >> make\local
 if errorlevel 1 exit 1
 echo TBB_LIB=%PREFIX:\=/%/Library/lib/ >> make\local
 if errorlevel 1 exit 1
-echo LDFLAGS_TBB= >> make\local
-if errorlevel 1 exit 1
 
 echo PRECOMPILED_HEADERS=false >> make\local
 if errorlevel 1 exit 1
