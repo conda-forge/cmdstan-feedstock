@@ -13,6 +13,8 @@ source:
   sha256: ea475d79a1ed170c4fd5d76cd8a03da17af6be88c62c94c7590e4e5604598489  # [aarch64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
   sha256: a57f3e22edaa3683292c37e4cd8a4e895e43a63bb627a0c84a37a8ee3e5ac4c4  # [ppc64le]
+  url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-s390x.tar.gz  # [s390x]
+  sha256: a7887a8029f8fbece7e86a71e22b30e60841298dbd121db20e6c40fa6f155b84  # [s390x]
 
 build:
   number: 0
