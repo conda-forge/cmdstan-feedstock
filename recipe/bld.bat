@@ -41,8 +41,10 @@ if errorlevel 1 exit 1
 type make\local
 if errorlevel 1 exit 1
 
-echo %PATH%
+echo PATH=%PATH%
 if errorlevel 1 exit 1
+
+echo CXX=%CXX%
 
 make print-compiler-flags
 if errorlevel 1 exit 1
