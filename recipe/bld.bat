@@ -41,7 +41,7 @@ if errorlevel 1 exit 1
 type make\local
 if errorlevel 1 exit 1
 
-make print-PATH -k -d
+make print-PATH clean -k -d
 
 make print-compiler-flags -k
 if errorlevel 1 exit 1
