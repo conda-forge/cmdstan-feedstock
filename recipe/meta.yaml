@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86 or arm64]
-  sha256: 18c93e760fb5a92b76a1e9c1e460d950aa245d07f3bded058eecf3d611569441  # [x86 or arm64]
+  sha256: 635e2e1cf9c4774c9019001325354d3610bae2adc4ed5af2fed87872dfc671fc  # [x86 or arm64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [aarch64]
-  sha256: 83ee9e0560272015814fafbccd5ccbf66e89baba2a942f883ed532beedbc76ae  # [aarch64]
+  sha256: 7e979a4f088aab64b19af271bd0b76a4ad81b6cccd61f805154570c5a2624275  # [aarch64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
-  sha256: 1e7c56366f698fda436c7edafa890324159c0185ddf9df10ee42b670e21d135e  # [ppc64le]
+  sha256: 29f3f62673957bd5e001c9df9afd209eb1c4f7a2322abba89f45397547f34555  # [ppc64le]
 
 build:
   number: 0
