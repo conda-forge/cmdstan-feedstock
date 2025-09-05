@@ -28,7 +28,7 @@ requirements:
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
-    - m2_conda_epoch >20240617    # [win]
+    - m2-conda-epoch ==20230914    # [win]
   host:
     - tbb-devel                    # [not win]
   run:
@@ -41,7 +41,7 @@ requirements:
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
-    - {{ pin_compatible('m2_conda_epoch') }}  # [win]
+    - {{ pin_compatible('m2-conda-epoch') }}  # [win]
     - gxx_{{ target_platform }} >={{ cxx_compiler_version }}  # [linux]
   run_constrained:
     - tbb >=2021                   # [win]
