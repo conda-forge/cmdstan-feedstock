@@ -14,6 +14,7 @@ echo "TBB_INTERFACE_NEW=true" >> make/local
 echo "TBB_INC=${PREFIX}/include/" >> make/local
 echo "TBB_LIB=${PREFIX}/lib/" >> make/local
 echo "PRECOMPILED_HEADERS=false" >> make/local
+echo "LDFLAGS+=-pthread" >> make/local
 
 make print-compiler-flags
 
