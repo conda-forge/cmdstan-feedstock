@@ -12,7 +12,7 @@ bin\stansummary.exe --help
 if errorlevel 1 exit 1
 
 :: run bernoulli example
-make examples/bernoulli/bernoulli.exe
+make examples/bernoulli/bernoulli.exe -d
 if errorlevel 1 exit 1
 examples\bernoulli\bernoulli.exe
 examples\bernoulli\bernoulli.exe sample data file=examples/bernoulli/bernoulli.data.json

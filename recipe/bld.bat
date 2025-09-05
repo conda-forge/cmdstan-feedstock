@@ -41,11 +41,7 @@ if errorlevel 1 exit 1
 type make\local
 if errorlevel 1 exit 1
 
-SET MSYS2_PATH_TYPE=inherit
-
-make print-PATH clean -k -d
-
-make print-compiler-flags -k
+make print-compiler-flags
 if errorlevel 1 exit 1
 
 make clean-all
