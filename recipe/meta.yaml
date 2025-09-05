@@ -28,7 +28,7 @@ requirements:
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
-    - m2_conda_epoch ==20230914    # [win]
+    - m2_conda_epoch >20240617    # [win]
   host:
     - tbb-devel                    # [not win]
   run:
