@@ -1,5 +1,5 @@
 {% set name = "cmdstan" %}
-{% set version = "2.37.0" %}
+{% set version = "2.35.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz  # [x86 or arm64]
-  sha256: 635e2e1cf9c4774c9019001325354d3610bae2adc4ed5af2fed87872dfc671fc  # [x86 or arm64]
+  sha256: 5bf668994e163419123d22bb7248ef1d30cbe2e7a14d50aa1c282b961f8172cd  # [x86 or arm64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-arm64.tar.gz  # [aarch64]
-  sha256: 7e979a4f088aab64b19af271bd0b76a4ad81b6cccd61f805154570c5a2624275  # [aarch64]
+  sha256: 87ea47f0576d581f0af7e3c1a2f9843d16a9c7b21ed94621c906f7a3183b410d  # [aarch64]
   url: https://github.com/stan-dev/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}-linux-ppc64el.tar.gz  # [ppc64le]
-  sha256: 29f3f62673957bd5e001c9df9afd209eb1c4f7a2322abba89f45397547f34555  # [ppc64le]
+  sha256: b36fcd962269759b5cef51da9585ceb73e7bea28d73f5eba00afdb1022f69cb0  # [ppc64le]
 
 build:
-  number: 0
+  number: 3
   binary_relocation: false
 
 requirements:
