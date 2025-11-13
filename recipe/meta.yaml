@@ -15,7 +15,7 @@ source:
   sha256: 29f3f62673957bd5e001c9df9afd209eb1c4f7a2322abba89f45397547f34555  # [ppc64le]
 
 build:
-  number: 0
+  number: 1
   binary_relocation: false
 
 requirements:
