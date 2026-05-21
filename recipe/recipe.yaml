@@ -68,10 +68,7 @@ requirements:
       then: tbb >=2021
 
 tests:
-  - downstream:
-      - cmdstanpy
-      - if: not win
-        then: r-cmdstanr
+  - downstream: cmdstanpy
 
 about:
   license: BSD-3-Clause
