@@ -13,15 +13,15 @@ for %%F in (activate deactivate) DO (
     copy %RECIPE_DIR%\%%F.sh %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.sh
 )
 
-:: we don't need test files
-del /s /q ".\src\test"
-del /s /q ".\stan\src\test"
-del /s /q ".\stan\lib\stan_math\test"
+rem :: we don't need test files
+rem del /s /q ".\src\test"
+rem del /s /q ".\stan\src\test"
+rem del /s /q ".\stan\lib\stan_math\test"
 
 
-:: or non-windows stancs
-del /s /q ".\bin\linux-stanc"
-del /s /q ".\bin\mac-stanc"
+rem :: or non-windows stancs
+rem del /s /q ".\bin\linux-stanc"
+rem del /s /q ".\bin\mac-stanc"
 
 echo d | Xcopy /s /e /y . %PREFIX%\Library\bin\cmdstan > NUL
 if errorlevel 1 exit 1
@@ -41,8 +41,8 @@ if errorlevel 1 exit 1
 type make\local
 if errorlevel 1 exit 1
 
-make print-compiler-flags
-if errorlevel 1 exit 1
+rem make print-compiler-flags
+rem if errorlevel 1 exit 1
 
 make clean-all
 if errorlevel 1 exit 1
