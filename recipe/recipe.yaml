@@ -9,7 +9,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: ${{ "https://github.com/stan-dev/cmdstan/releases/download/v${{ version }}/cmdstan-${{ version }}.tar.gz" if x86 or arm64 else "https://github.com/stan-dev/cmdstan/releases/download/v${{ version }}/cmdstan-${{ version }}-linux-arm64.tar.gz" if aarch64 else "https://github.com/stan-dev/cmdstan/releases/download/v${{ version }}/cmdstan-${{ version }}-linux-ppc64el.tar.gz" }}
+  url: ${{ "https://github.com/stan-dev/cmdstan/releases/download/v"+version+"/cmdstan-"+version+".tar.gz" if x86 or arm64 else "https://github.com/stan-dev/cmdstan/releases/download/v"+version+"/cmdstan"+version+"-linux-arm64.tar.gz" if aarch64 else "https://github.com/stan-dev/cmdstan/releases/download/v"+version+"/cmdstan-"+version+"-linux-ppc64el.tar.gz" }}
   sha256: ${{ "ffe03c29c9f139d77deeb156a2a0911ebf0742ae38311c739f4fcea3bc4f8909" if x86 or arm64 else "58f0366614120f0f7be56179bb8f89a350af05f037ab5db32f8042fc05b5a587" if aarch64 else "beccdc4e7416c1a861005d246ff71eafccac18217af6ba1cae1ff54ec7b151ca" }}
 
 build:
