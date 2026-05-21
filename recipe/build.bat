@@ -38,6 +38,9 @@ if errorlevel 1 exit 1
 echo PRECOMPILED_HEADERS=false >> make\local
 if errorlevel 1 exit 1
 
+echo OS=Windows_NT >> make\local
+if errorlevel 1 exit 1
+
 type make\local
 if errorlevel 1 exit 1
 
