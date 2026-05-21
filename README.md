@@ -21,7 +21,6 @@ Documentation: https://mc-stan.org/docs/cmdstan-guide/index.html
 * a full first- and higher-order automatic differentiation library based on C++ template overloads, and
 * a supporting fully-templated matrix, linear algebra, and probability special function library.
 
-
 Current build status
 ====================
 
